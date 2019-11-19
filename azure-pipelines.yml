@@ -17,14 +17,10 @@ steps:
 
 - script: |
     npm install
-    npm run build
     npm install -g pkg
+    npm run build
+    npm run compile
   displayName: 'npm install and build'
-
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
-    includeRootFolder: false
 
 - task: PublishBuildArtifacts@1
   inputs:

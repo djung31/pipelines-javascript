@@ -20,6 +20,11 @@
     "nyc": "^12.0.2" 
   },
   "scripts": {
-    "build": "nyc --reporter=cobertura --reporter=html ./node_modules/.bin/mocha tests/**/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml"
-  }
+    "build": "nyc --reporter=cobertura --reporter=html ./node_modules/.bin/mocha tests/**/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml",
+    "compile": "pkg . --targets node10-linux --o ./server-binary --debug"
+  },
+  "pkg": {
+    "scripts": "./server.js"
+  },
+  "bin": "./server.js"
 }
